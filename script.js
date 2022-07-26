@@ -16,11 +16,11 @@ client.getEntries({ content_type: "media" }).then((entries) => {
   });
 });
 
+app.use(cors());
+
 app.get("/api/media", (req, res) => {
   res.json(mediaArr);
 });
-
-app.use(cors({ "Access-Control-Allow-Origin": "*" }));
 
 app.listen(port, () => {
   console.log(`Server has started at port ${port}`);
